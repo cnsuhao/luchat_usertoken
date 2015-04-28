@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itjh.luchat.usertoken.mapper.UserTokenMapper" >
+  <resultMap id="BaseResultMap" type="cn.itjh.luchat.usertoken.domain.UserToken" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="userId" property="userid" jdbcType="VARCHAR" />
+    <result column="token" property="token" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, userId, token
+  </sql>
+<!--   
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from userToken
+    where id = #{id,jdbcType=INTEGER}
+  </select> -->
+  
+  <insert id="addUserToken" parameterType="cn.itjh.luchat.usertoken.domain.UserToken" >
+    insert into userToken (userId, token
+      )
+    values (#{userId,jdbcType=VARCHAR}, #{token,jdbcType=VARCHAR}
+      )
+  </insert>
+  
+<!--   <select id="countByExample" parameterType="cn.luchat.userGetToken.domain.userTokenExample" resultType="java.lang.Integer" >
+    select count(*) from userToken
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  
+  <update id="updateByPrimaryUserId" parameterType="cn.luchat.userGetToken.domain.userToken" >
+    update userToken
+    set  token = #{token,jdbcType=VARCHAR}
+    where userId = #{userid,jdbcType=VARCHAR}
+  </update> -->
+  
+  
+</mapper>
