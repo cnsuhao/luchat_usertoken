@@ -106,6 +106,7 @@ public class UserTokenServer {
                 }
             }else{
                 result.put("error_code", 9998);
+                result.put("error_code", 9998);
                 result.put("description", "信息传入不能为空,请重新输入!");
             }
         } catch (Exception e) {
