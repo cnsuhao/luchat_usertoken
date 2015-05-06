@@ -99,7 +99,7 @@ public class UserTokenServer {
                 if (null != userToken) {
                     result.put("error_code", 0);
                     result.put("description", "用户token获取成功");
-                    result.put("conten", userToken);
+                    result.put("content", userToken);
                 }else{
                     result.put("error_code", 1001);
                     result.put("description", "用户token获取失败,请重试!");
