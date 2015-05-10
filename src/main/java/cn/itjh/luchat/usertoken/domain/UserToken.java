@@ -17,7 +17,7 @@ import java.io.Serializable;
  */
 public class UserToken implements Serializable {
 
-    private static final long serialVersionUID = 3729462256429865093L;
+//    private static final long serialVersionUID = 3729462256429865093L;
     private String userId;
     private int code;
     private String token;
