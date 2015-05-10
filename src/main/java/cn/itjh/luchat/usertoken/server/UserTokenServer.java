@@ -96,7 +96,7 @@ public class UserTokenServer {
             if (!StringUtils.isEmpty(userId) && !StringUtils.isEmpty(name) && !StringUtils.isEmpty(portraitUri)) {
                 //获取用户token
                 userToken = userTokenService.getUserTokenByRedis(userId,name,portraitUri);
-                if (null != userToken) {
+                if (null != userToken && null != userToken.getToken()) {
                     result.put("error_code", 0);
                     result.put("description", "用户token获取成功");
                     result.put("content", userToken);
