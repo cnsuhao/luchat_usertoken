@@ -16,6 +16,8 @@ import javax.ws.rs.core.MediaType;
 
 import cn.itjh.luchat.usertoken.domain.UserToken;
 import cn.itjh.luchat.usertoken.service.UserTokenService;
+
+import cn.itjh.luchat.usertoken.util.Log;
 import cn.itjh.luchat.usertoken.util.io.rong.util.GsonUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -72,6 +74,7 @@ public class UserTokenServer {
      * @Modification history none
      * @Modified by none
      */
+    @Log(name = "获取用户token")
     @GET
     @Path("/getUserToken/{userId}/{name}/{portraitUri}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -86,7 +89,7 @@ public class UserTokenServer {
             @ApiParam(name = "portraitUri", value = "用户头像 URI，最大长度 1024 字节。用来在 Push 推送时显示用户的名称", required = true) @PathParam("portraitUri") String portraitUri,
             @Context HttpServletRequest servletRequest, @Context HttpServletResponse servletResponse) {
         servletResponse.setContentType("application/json;charset=UTF-8");
-        
+
         logger.info("用户id: " + userId + "获取token");
         // 返回参数的map
         Map<String, Object> result = new HashMap<String, Object>();
