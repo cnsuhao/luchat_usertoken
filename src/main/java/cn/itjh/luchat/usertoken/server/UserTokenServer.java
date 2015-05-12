@@ -16,8 +16,6 @@ import javax.ws.rs.core.MediaType;
 
 import cn.itjh.luchat.usertoken.domain.UserToken;
 import cn.itjh.luchat.usertoken.service.UserTokenService;
-
-import cn.itjh.luchat.usertoken.util.Log;
 import cn.itjh.luchat.usertoken.util.io.rong.util.GsonUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
@@ -74,7 +72,6 @@ public class UserTokenServer {
      * @Modification history none
      * @Modified by none
      */
-    @Log(name = "获取用户token")
     @GET
     @Path("/getUserToken/{userId}/{name}/{portraitUri}")
     @Produces(MediaType.APPLICATION_JSON)
