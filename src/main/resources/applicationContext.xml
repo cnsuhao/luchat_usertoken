@@ -13,17 +13,9 @@
 
 	<context:component-scan base-package="cn.itjh.luchat.usertoken" />
 
-	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<!-- 使AspectJ注解起作用：自动为匹配的类生产代理对象 -->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
-
-	<bean id="springMethodInterceptor" class="cn.itjh.luchat.usertoken.util.LogAop">
-	</bean>
-
-	<aop:config>
-		<aop:pointcut id="logPointCuts"
-					  expression="execution(* cn.itjh.luchat.usertoken.*.*(..))" />
-		<aop:advisor pointcut-ref="logPointCuts" advice-ref="springMethodInterceptor" />
-	</aop:config>
 
 	<bean class="com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON" />
 	<bean class="com.wordnik.swagger.jaxrs.listing.ApiDeclarationProvider" />
